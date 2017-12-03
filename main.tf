@@ -70,6 +70,6 @@ resource "aws_lambda_function" "lambda" {
 
 module "alarms" {
   source = "github.com/CalebMacdonaldBlack/terraform-lambda-errors"
-  env = "${var.env}"
   function_name = "${aws_lambda_function.lambda.function_name}"
+  alarm_sns_arn = "${var.alarm_sns_arn}"
 }
